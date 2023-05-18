@@ -75,6 +75,10 @@ const Router = createBrowserRouter([
     // errorElement灵活性更好，可以根据不同的模块设置不同的404页面
     errorElement: <ErrorPage message="Oops"/>
   },
+  {
+    path: '/example',
+    element: <Example></Example>
+  }
   // {
   //   path: '*', // 404的优先级比ErrorPage的优先级要高
   //   element: <NotFound></NotFound>

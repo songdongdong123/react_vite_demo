@@ -1,10 +1,12 @@
 import React from 'react';
+import useTitle from '../../examples/hooks/customHooks/useTitle';
 type teststring = 'rect' | 'circle' | 'text'
 type rowCol = Array<teststring>
 interface SkeletonProps {
   rowCol?: Array<teststring>;
 }
 const Skeleton: React.FC<SkeletonProps> = (props) => {
+  useTitle('首页')
   return (
     <>
       <p>Skeleton</p>
