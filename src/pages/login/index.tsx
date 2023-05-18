@@ -1,7 +1,7 @@
-const Movies:React.FC = () => (
+const Login:React.FC = () => (
     <div>
-        movies
+        Login
     </div>
 )
 
-export default Movies;
+export default Login;

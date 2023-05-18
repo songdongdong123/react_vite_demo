@@ -1,7 +1,7 @@
-const Music:React.FC = () => (
+const Register:React.FC = () => (
     <div>
-        Music
+        Register
     </div>
 )
 
-export default Music;
+export default Register;
