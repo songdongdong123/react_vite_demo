@@ -1,17 +1,13 @@
+import React from 'react';
 interface errorProps {
-    message: string,
-    errorCode?: number
+  message: string;
+  errorCode?: number;
 }
-const ErrorPage: React.FC<errorProps> = ({
-    message,
-    errorCode
-}) => (
-    <div>
-        <p>{message}</p>
-        {
-            errorCode ? errorCode : null
-        }
-    </div>
-)
+const ErrorPage: React.FC<errorProps> = ({ message, errorCode }) => (
+  <div>
+    <p>{message}</p>
+    {errorCode ? errorCode : null}
+  </div>
+);
 
 export default ErrorPage;

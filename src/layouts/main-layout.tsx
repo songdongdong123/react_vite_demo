@@ -1,5 +1,6 @@
-import { Outlet } from "react-router-dom";
-const MainLayout:React.FC = () => {
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+const MainLayout: React.FC = () => {
   return (
     <>
       <div> MainLayout Header</div>
@@ -7,7 +8,7 @@ const MainLayout:React.FC = () => {
       <Outlet />
       <div> MainLayout Footer</div>
     </>
-  )
-}
+  );
+};
 
 export default MainLayout;

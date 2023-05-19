@@ -1,4 +1,4 @@
-import {useReducer} from 'react';
+import React, { useReducer } from 'react';
 import { Button, Space, Divider } from 'antd';
 /**
  * 用户处理负责状态管理，需要对多个值进行操作时，可以使用useReducer
@@ -9,47 +9,55 @@ import { Button, Space, Divider } from 'antd';
  * useReducer返回值是一个数组，[state, dispatch] = useReducer(reducer, initState)
  *      dispatch: 用于触发一个action，从而更新状态。他接受一个action对象作为参数，对象必须包含一个“type”字段，
  *                和一个可选的payload（表示要更新的数据）字段。
-*/
-const reducer = function(state:any, action:any) {
-    switch(action.type) {
-        case 'increment-count':
-            return {...state, count: state.count++};
-        case 'increment-index':
-            return {...state, index: state.index++};
-        case 'decrement-count':
-            return {...state, count: state.count--};
-        case 'decrement-index':
-            return {...state, index: state.index--};
-        default:
-            return state;
-    }
-}
-const initState = {
-    count: 0,
-    index: 0
+ */
+const reducer = function (state: any, action: any) {
+  switch (action.type) {
+    case 'increment-count':
+      return { ...state, count: state.count++ };
+    case 'increment-index':
+      return { ...state, index: state.index++ };
+    case 'decrement-count':
+      return { ...state, count: state.count-- };
+    case 'decrement-index':
+      return { ...state, index: state.index-- };
+    default:
+      return state;
+  }
 };
-const UseReducerCom:React.FC = () => {
-    const [state, dispatch] = useReducer(reducer, initState);
-    const {count, index} = state;
-    return (
-        <div>
-            <Divider orientation="left">useReducer的基本使用</Divider>
-            <div>
-                <Space wrap>
-                    <Button type="primary" onClick={() => dispatch({type: 'increment-count'})}>增加count+</Button>
-                    <Button type="primary" onClick={() => dispatch({type: 'decrement-count'})}>减少count-</Button>
-                </Space>
-                <p>{count}</p>
-            </div>
-            <div style={{marginTop: 20}}>
-                <Space wrap>
-                    <Button type="primary" onClick={() => dispatch({type: 'increment-index'})}>增加index+</Button>
-                    <Button type="primary" onClick={() => dispatch({type: 'decrement-index'})}>减少index-</Button>
-                </Space>
-                <p>{index}</p>
-            </div>
-        </div>
-    )
-}
+const initState = {
+  count: 0,
+  index: 0,
+};
+const UseReducerCom: React.FC = () => {
+  const [state, dispatch] = useReducer(reducer, initState);
+  const { count, index } = state;
+  return (
+    <div>
+      <Divider orientation="left">useReducer的基本使用</Divider>
+      <div>
+        <Space wrap>
+          <Button type="primary" onClick={() => dispatch({ type: 'increment-count' })}>
+            增加count+
+          </Button>
+          <Button type="primary" onClick={() => dispatch({ type: 'decrement-count' })}>
+            减少count-
+          </Button>
+        </Space>
+        <p>{count}</p>
+      </div>
+      <div style={{ marginTop: 20 }}>
+        <Space wrap>
+          <Button type="primary" onClick={() => dispatch({ type: 'increment-index' })}>
+            增加index+
+          </Button>
+          <Button type="primary" onClick={() => dispatch({ type: 'decrement-index' })}>
+            减少index-
+          </Button>
+        </Space>
+        <p>{index}</p>
+      </div>
+    </div>
+  );
+};
 
 export default UseReducerCom;

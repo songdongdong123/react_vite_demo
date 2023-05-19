@@ -1,5 +1,6 @@
-import { Outlet } from "react-router-dom";
-const ManageLayout:React.FC = () => {
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+const ManageLayout: React.FC = () => {
   return (
     <>
       <div> ManageLayout Header</div>
@@ -7,7 +8,7 @@ const ManageLayout:React.FC = () => {
       <Outlet />
       <div> ManageLayout Footer</div>
     </>
-  )
-}
+  );
+};
 
 export default ManageLayout;

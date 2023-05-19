@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import { Button, Space, Divider } from 'antd';
 /**
  * useRef 返回一个可变的 ref 对象，其 .current 属性被初始化为传入的参数（initialValue）。返回的 ref 对象在组件的整个生命周期内保持不变。
@@ -24,11 +24,11 @@ import { Button, Space, Divider } from 'antd';
 // }
 
 // 2. 不会触发rerender
-const UseRefCom:React.FC = () => {
+const UseRefCom: React.FC = () => {
   const nameRef = useRef('ethan');
-  const changeRef = function() {
-      nameRef.current = 'ethanssss';
-      console.log(nameRef.current);
+  const changeRef = function () {
+    nameRef.current = 'ethanssss';
+    console.log(nameRef.current);
   };
   return (
     <>
@@ -38,7 +38,7 @@ const UseRefCom:React.FC = () => {
       <p>{nameRef.current}</p>
       <Button onClick={changeRef}>修改Ref</Button>
     </>
-  )
-}
+  );
+};
 
 export default UseRefCom;

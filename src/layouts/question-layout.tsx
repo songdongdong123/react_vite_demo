@@ -1,5 +1,6 @@
-import { Outlet } from "react-router-dom";
-const QuestionLayout:React.FC = () => {
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+const QuestionLayout: React.FC = () => {
   return (
     <>
       <div> QuestionLayout Header</div>
@@ -7,7 +8,7 @@ const QuestionLayout:React.FC = () => {
       <Outlet />
       <div> QuestionLayout Footer</div>
     </>
-  )
-}
+  );
+};
 
 export default QuestionLayout;
